@@ -17,10 +17,11 @@ A Java library for visual regression testing with advanced screenshot comparison
 ### Maven
 ```xml
 <dependency>
-    <groupId>com.screenshot</groupId>
-    <artifactId>playwright-screenshot-compare</artifactId>
+    <groupId>com.screenshots</groupId>
+    <artifactId>playwright-screenshot-compare-tool</artifactId>
     <version>1.0.0</version>
-    <systemPath>${project.basedir}/resources/playwright-screenshot-compare-1.0.0.jar</systemPath>
+    <scope>system</scope>
+    <systemPath>${project.basedir}/src/main/resources/playwright-screenshot-compare-1.0.0.jar</systemPath>
 </dependency>
 ```
 
