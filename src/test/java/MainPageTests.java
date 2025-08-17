@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 import steps.MainPageSteps;
 import utils.PlaywrightSetup;
 
+import java.io.IOException;
 import java.nio.file.Paths;
 
 public class MainPageTests extends PlaywrightSetup {
@@ -15,10 +16,25 @@ public class MainPageTests extends PlaywrightSetup {
     }
 
 
-    @Test
-    void checkTbcCard1() {
-        page.locator("div.components-group > app-cta-section")
-                .screenshot(new Locator.ScreenshotOptions()
-                        .setPath(Paths.get("src/main/resources/cta-section-screenshot.png")));
+    @Test(priority = 1)
+    void checkTbcCard1Pass() throws IOException {
+        mainPageSteps
+                .openTbcSite()
+                .checkCardUsingVisualTestingPass();
+    }
+
+    @Test(priority = 2)
+    void checkTbcCard2Fail() throws IOException {
+        mainPageSteps
+                .openTbcSite()
+                .checkCardUsingVisualTestingFail();
+    }
+
+    @Test(priority = 2)
+    void checkTbcCard3IgnoreRegion() throws IOException {
+        mainPageSteps
+                .openTbcSite()
+                .nextCarousel()
+                .checkCardUsingVisualTestingRegionIgnore();
     }
 }

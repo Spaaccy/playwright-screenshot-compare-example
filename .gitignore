@@ -1,0 +1,13 @@
+*.log
+*.mdmp
+**/target/*
+target/
+allure-results/
+build/
+azure-pipelines.yml
+TestCaseMeasurement.xlsx
+/.idea/
+/.idea/workspace.xml
+LibraryUsage.txt
+.idea/
+*.coabin
