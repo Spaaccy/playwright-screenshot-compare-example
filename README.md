@@ -20,7 +20,7 @@ A Java library for visual regression testing with advanced screenshot comparison
     <groupId>com.screenshot</groupId>
     <artifactId>playwright-screenshot-compare</artifactId>
     <version>1.0.0</version>
-    <systemPath>${project.basedir}/resources/playwright-screenshot-compare-1.0.0.jar</systemPath>
+    <systemPath>${project.basedir}/src/main/resources/playwright-screenshot-compare-1.0.0.jar</systemPath>
 </dependency>
 ```
 
