@@ -63,7 +63,8 @@ public class MainPageSteps {
         String actualPath = "images/mainPageImagesActual/cta-section-screenshot_ignore.png";
         String expectedPath = "images/mainPageImagesExpected/cta-section-screenshot_ignore.png";
         page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get(actualPath)));
-        ComparisonResult comparisonResult = PlaywrightScreenshotCompare.compareIgnoringTransparency(actualPath, expectedPath);
+        ComparisonOptions comparisonOptions = ComparisonOptions.builder().useTransparencyAsMask(true).ignoreDimensions(true).build();
+        ComparisonResult comparisonResult = PlaywrightScreenshotCompare.compare(actualPath, expectedPath, comparisonOptions);
         System.out.println(comparisonResult);
         Assert.assertTrue(comparisonResult.isMatches());
     }
