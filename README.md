@@ -145,6 +145,3 @@ public void testScreenshotComparison() {
     Assert.assertTrue("Screenshots should match", result.isMatches());
 }
 ```
-
-### Example Allure Report Output
-![image.png](images/image.png)
