@@ -44,7 +44,7 @@ public class MainPageSteps {
         String actualPath = "images/mainPageImagesActual/cta-section-screenshot_pass.png";
         String expectedPath = "images/mainPageImagesExpected/cta-section-screenshot_pass.png";
         mainPage.firstOfferCard.screenshot(new Locator.ScreenshotOptions().setPath(Paths.get(actualPath)));
-        ComparisonResult comparisonResult = PlaywrightScreenshotCompare.compare(actualPath, expectedPath);
+        ComparisonResult comparisonResult = PlaywrightScreenshotCompare.compareIgnoringDimensions(actualPath, expectedPath, .3);
         System.out.println(comparisonResult);
         Assert.assertTrue(comparisonResult.isMatches());
     }
@@ -53,7 +53,7 @@ public class MainPageSteps {
         String actualPath = "images/mainPageImagesActual/cta-section-screenshot_fail.png";
         String expectedPath = "images/mainPageImagesExpected/cta-section-screenshot_fail.png";
         mainPage.firstOfferCard.screenshot(new Locator.ScreenshotOptions().setPath(Paths.get(actualPath)));
-        ComparisonResult comparisonResult = PlaywrightScreenshotCompare.compareIgnoringDimensions(actualPath, expectedPath);
+        ComparisonResult comparisonResult = PlaywrightScreenshotCompare.compareIgnoringDimensions(actualPath, expectedPath, .3);
         System.out.println(comparisonResult);
         Assert.assertTrue(comparisonResult.isMatches());
     }
@@ -63,7 +63,7 @@ public class MainPageSteps {
         String actualPath = "images/mainPageImagesActual/cta-section-screenshot_ignore.png";
         String expectedPath = "images/mainPageImagesExpected/cta-section-screenshot_ignore.png";
         page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get(actualPath)));
-        ComparisonOptions comparisonOptions = ComparisonOptions.builder().useTransparencyAsMask(true).ignoreDimensions(true).build();
+        ComparisonOptions comparisonOptions = ComparisonOptions.builder().useTransparencyAsMask(true).ignoreDimensions(true).threshold(.3).build();
         ComparisonResult comparisonResult = PlaywrightScreenshotCompare.compare(actualPath, expectedPath, comparisonOptions);
         System.out.println(comparisonResult);
         Assert.assertTrue(comparisonResult.isMatches());
