@@ -3,7 +3,7 @@
 ## 🎯 Steps
 
 1. **Navigate** 🌐 to https://tbcpay.ge/en/services/komerciuli-saitebi
-2. **Take screenshot** 📷, save as `baseline.png`
+2. **Take screenshot** 📷, save as `baseline.png` (Using Playwright)
 3. **Open** `baseline.png` in Pixlr ✨
     - 🌐 Go to https://pixlr.com/editor/
     - 📂 Open photo
@@ -14,7 +14,7 @@
     - 💾 Export as full quality (**IMPORTANT**)
 4. **Save** 💾 as `baseline-masked.png`
 5. **In Playwright test** 🧪:
-    - Take new screenshot of same page
+    - Take new screenshot of same page (Using Playwright)
     - Compare with `baseline-masked.png` using transparency masking
     - Verify comparison passes despite transparent areas
 
